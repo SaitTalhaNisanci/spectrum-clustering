@@ -44,7 +44,7 @@ function L = unnormalizedLaplacian(D,W)
 end
 
 function eigenVectors = firstKEigenVectors(A,k)
-    [eigenVectors,~] = eigs(A,k,'smallestabs');
+    [eigenVectors,~] = eigs(A,k,'SM');
 end
 
 function similarityMatrix = constructSimilarityMatrix(A)
