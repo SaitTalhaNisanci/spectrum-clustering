@@ -12,17 +12,9 @@ function clusters = normalized_spec(A,k)
     % normalize rows of matrix U
     T = normalizeRows(U);
     % index of clusters
-    clusters = kmeans(U,k);
-    plotClusters(clusters,A,k);
+    clusters = kmeans(T,k);
 end
-function plotClusters(clusters,A,k)
-    colors = ['g','b','r','y','m','c','k'];
-    figure;
-    hold on;
-    for i=1:size(clusters)
-        plot(A(i,1),A(i,2),'*','Color',colors(clusters(i)));
-    end    
-end
+
 function W = similarityGraph(similarityMatrix,k)
     % k nearest neighbors
     W = zeros(size(similarityMatrix,1),size(similarityMatrix,1));

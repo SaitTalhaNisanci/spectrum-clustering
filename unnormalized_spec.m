@@ -11,15 +11,6 @@ function clusters = unnormalized_spec(A,k)
     U = firstKEigenVectors(L,k);
     % index of clusters
     clusters = kmeans(U,k);
-    plotClusters(clusters,A,k);
-end
-function plotClusters(clusters,A,k)
-    colors = ['g','b','r','y','m','c','k'];
-    figure;
-    hold on;
-    for i=1:size(clusters)
-        plot(A(i,1),A(i,2),'*','Color',colors(clusters(i)));
-    end    
 end
 function W = similarityGraph(similarityMatrix,k)
     % k nearest neighbors
