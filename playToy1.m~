@@ -1,0 +1,12 @@
+load('toy1.mat')
+
+for k = 7:7
+    k
+    norm_clusters = normalized_spec(X,k);
+    unnorm_clusters = unnormalized_spec(X,k);
+    kmeans_clusters = kmeans(X, k);
+
+    plotClusters(norm_clusters, X, ['Toy1', 'Normalized Spec. Clus. K= '], );
+    plotClusters(unnorm_clusters, X, 'Toy1', 'Unnormalized Spec. Clus.', k);
+    plotClusters(kmeans_clusters, X, 'Toy1', 'K Means Clustering', k);
+end
